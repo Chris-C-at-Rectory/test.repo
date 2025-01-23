@@ -1,5 +1,5 @@
 a="abcdefghijklmnopqrstuvwxyz"
-pt=input("Put in plaintext (all lower case)")
+pt=input("Put in plaintext: ").lower()
 k=input("inpput a key: ").lower()
 
 ks=""
@@ -8,7 +8,7 @@ ct=""
 for i in range(len(pt)):
 	if i>=len(k):
 		i-=len(k)
-	ks+=key[i]
+	ks+=k[i]
 
 for i in range(len(pt)):
 	x=a.index(pt[i])+a.index(ks[i])
