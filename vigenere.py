@@ -5,6 +5,7 @@ k=input("inpput a key: ").lower()
 ks=""
 ct=""
 
+#a for loop that generates keystream
 for i in range(len(pt)):
 	if i>=len(k):
 		i-=len(k)
