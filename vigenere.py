@@ -1,19 +1,18 @@
-def keystr(p,key):
-	stream=[]
-	j=-1
-	for i in range(len(p)):
-		j=i
-		while j>int(len(key))-1:
-			j-=len(key)
-			
-		stream.append(key[j])
-	return stream
-def vigenere(p,keystream):
-	alph='abcdefghijklmnopqrstuvwxyz'
-	code=''
-	for i in range(len(p)):
-		q=alph.index(p[i])
-		j=alph.index(keystream[i])
-		x=(q+j)%26
-		code+=alph[x]
-	return code
+a="abcdefghijklmnopqrstuvwxyz"
+pt=input("Put in plaintext (all lower case)")
+k=input("inpput a key: ").lower()
+
+ks=""
+ct=""
+
+for i in range(len(pt)):
+	if i>=len(k):
+		i-=len(k)
+	ks+=key[i]
+
+for i in range(len(pt)):
+	x=a.index(pt[i])+a.index(ks[i])
+	if x>=26:
+		x-=26
+	ct+=a[x]
+print(ct)
